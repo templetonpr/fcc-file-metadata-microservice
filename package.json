@@ -1,0 +1,24 @@
+{
+  "name": "fcc-file-metadata-microservice",
+  "version": "1.0.0",
+  "description": "Microservice to accept a file and return JSON string with the file size",
+  "main": "file-handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node file-handler.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templetonpr/fcc-file-metadata-microservice.git"
+  },
+  "author": "Patrick Templeton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/templetonpr/fcc-file-metadata-microservice/issues"
+  },
+  "homepage": "https://github.com/templetonpr/fcc-file-metadata-microservice#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "multer": "^1.1.0"
+  }
+}
