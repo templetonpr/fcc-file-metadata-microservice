@@ -8,7 +8,7 @@ let storage = multer.diskStorage({
     cb(null, __dirname + '/uploads');
   },
   filename: (req, file, cb) => {
-    cb(null, file.fieldname + '-' + Date.now() + '.' + file.originalname.split(".")[1])
+    cb(null, file.mimetype.split("/")[0] + '-' + Date.now() + '.' + file.mimetype.split("/")[1])
   }
 });
 
@@ -17,6 +17,11 @@ let upload = multer({ storage: storage });
 app.get('/', (req, res) => {
   // instructions page
   res.sendFile(__dirname + '/public/index.html');
+})
+
+.get('/*', (req, res) => {
+  // redirect everything to /
+  res.redirect('/');
 })
 
 .post('/', upload.single('uploaded-file'), (req, res) => {
