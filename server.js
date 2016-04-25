@@ -24,11 +24,18 @@ app.get('/', (req, res) => {
   res.redirect('/');
 })
 
-.post('/', upload.single('uploaded-file'), (req, res) => {
-  console.log(req.file);
-  res.json({
-    "Name": req.file.originalname,
-    "Size": req.file.size
+.post('/', (req, res) => {
+  multer().single('uploaded-file')(req, res, (err) => {
+    if (err) {
+      console.log(err);
+      res.send("<h1>There was an error processing your file. Please try again.</h1>");
+    } else {
+      console.log(req.file);
+      res.json({
+        "Name": req.file.originalname,
+        "Size": req.file.size
+      });
+    }
   });
 });
 
