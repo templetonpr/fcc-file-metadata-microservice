@@ -1,6 +1,8 @@
 # FCC File Metadata Microservice
 Microservice to accept a file and return JSON string with the file size
 
+Live version here: https://templetonpr-fcc-file-metadata.herokuapp.com/
+
 ### Usage
 
 `npm install` to install dependencies.
